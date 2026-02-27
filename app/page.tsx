@@ -366,12 +366,13 @@ export default function App() {
       </aside>
 
       <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
-        <div style={{ height: 54, background: "#070c1a", borderBottom: "1px solid #1e293b", display: "flex", alignItems: "center", padding: "0 24px", gap: 16, flexShrink: 0 }}>
-          <div style={{ flex: 1 }}>
-            <div style={{ position: "relative", display: "inline-block", width: "100%", maxWidth: 360 }}>
-              <span style={{ position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)", color: "#475569", fontSize: 13 }}>🔍</span>
-              <input placeholder="Search all companies…" style={{ width: "100%", background: "#0f172a", color: "#e2e8f0", border: "1px solid #1e293b", borderRadius: 8, padding: "6px 12px 6px 32px", fontSize: 13, outline: "none" }} />
-            </div>
+        <div style={{ height: 48, background: "#070c1a", borderBottom: "1px solid #1e293b", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 28px", flexShrink: 0 }}>
+          <div style={{ fontSize: 12, color: "#475569", fontWeight: 500, textTransform: "capitalize", letterSpacing: "0.02em" }}>
+            {selected ? (
+              <><span style={{ color: "#334155" }}>Companies</span><span style={{ margin: "0 6px", color: "#1e293b" }}>›</span><span style={{ color: "#94a3b8" }}>{selected.name}</span></>
+            ) : (
+              <span style={{ color: "#94a3b8" }}>{page}</span>
+            )}
           </div>
           <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
             <div style={{ fontSize: 11, color: "#475569" }}><span style={{ color: "#f59e0b" }}>★</span> {savedCompanies.length} saved</div>
