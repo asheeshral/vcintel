@@ -1,4 +1,5 @@
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import AppShell from "@/components/AppShell";
 
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const dmSerif = DM_Serif_Display({ subsets: ["latin"], weight: ["400"] });
@@ -22,7 +23,9 @@ export default function RootLayout({ children }) {
           input::placeholder, textarea::placeholder { color: #475569; }
           select option { background: #1e293b; }
         `}</style>
-        {children}
+        <AppShell>
+          {children}
+        </AppShell>
       </body>
     </html>
   );
